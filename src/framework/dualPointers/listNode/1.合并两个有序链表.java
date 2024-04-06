@@ -1,4 +1,4 @@
-package framwork.dual_pointers.list_node;
+package framework.dualPointers.listNode;
 
 /*
  * @lc app=leetcode.cn id=21 lang=java

@@ -1,4 +1,4 @@
-package framwork.dual_pointers.list_node;
+package framework.dualPointers.listNode;
 
 /**
  * @author: Mr. Ye
