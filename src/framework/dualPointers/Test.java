@@ -1,15 +1,9 @@
-package framework.dualPointers.array.fastAndSlow.slidingWindow;
+package framework.dualPointers;
 
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author: Mr. Ye
- * @description: 567. 字符串的排列
- * @createDate: 2024/04/11
- */
-
-class Solution {
+public class Test {
   /**
    * 字符串的排列
    * 
@@ -23,7 +17,7 @@ class Solution {
     Map<Character, Integer> need = new HashMap<>(5);
     Map<Character, Integer> window = new HashMap<>(5);
     // need赋值
-    for(char c : s1.toCharArray()) {
+    for (char c : s1.toCharArray()) {
       updateMap(need, c, 1);
     }
 
@@ -39,7 +33,6 @@ class Solution {
           valid++;
         }
       } else {
-        // 若有一个字符不符合要求，更新left至当前字符，重置valid和window
         left = right - 1;
         valid = 0;
         window.clear();
@@ -48,6 +41,9 @@ class Solution {
       // 缩小窗口（维护定长窗口，此处只判断一次，可改为if）
       while (right - left >= s1.length()) {
         if (valid == need.size()) {
+          System.out.println(cRight);
+          char charAt = s2.charAt(left);
+          System.out.println(1);
           return true;
         }
         // 更新数据
@@ -68,7 +64,7 @@ class Solution {
    * 更新map的目标字符个数
    * 
    * @param map 目标map
-   * @param c 目标字符
+   * @param c   目标字符
    * @param num 更新的字符个数
    */
   public static void updateMap(Map<Character, Integer> map, char c, int num) {
@@ -77,5 +73,12 @@ class Solution {
     } else {
       map.put(c, 1);
     }
+  }
+
+  public static void main(String[] args) {
+    String s1 = "qff";
+    String s2 = "ifisnoskikfqzrmzlv";
+
+    System.out.println(checkInclusion(s1, s2));
   }
 }
