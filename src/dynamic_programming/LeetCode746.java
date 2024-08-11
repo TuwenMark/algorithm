@@ -32,10 +32,10 @@ public class LeetCode746 {
         int[] dp = new int[2];
         dp[0] = 0;
         dp[1] = 0;
-        for (int i = 2; i < cost.length + 1; i++) {
-            int sum = Math.min((dp[0] + cost[i - 2]), (dp[1] + cost[i - 1]));
+        for (int i = 2; i <= cost.length; i++) {
+            int dpi = Math.min((dp[0] + cost[i - 2]), (dp[1] + cost[i - 1]));
             dp[0] = dp[1];
-            dp[1] = sum;
+            dp[1] = dpi;
         }
         return dp[1];
     }
